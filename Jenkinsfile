@@ -1,18 +1,14 @@
-#!/usr/bin/env groovy
-
 pipeline {
   agent {
     docker {
-        image 'node:16.13.1-alpine'
-        label 'my-defined-label'
-        args  '-v /tmp:/tmp'
+      image 'ubuntu'
     }
   }
   
   stages {
     stage('test') {
       steps {
-        echo 'hello world'
+        sh 'echo hello world'
       }
     }
   }
